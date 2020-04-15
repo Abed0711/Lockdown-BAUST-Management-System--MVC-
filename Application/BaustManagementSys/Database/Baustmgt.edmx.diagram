@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5f3e9fa172bd487f85ab1fc32c818b4d" Name="Diagram1">
+        <EntityTypeShape EntityType="BAUSTDBModel.AnnualTable" Width="1.5" PointX="7.5" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.AttendanceTable" Width="1.5" PointX="12.75" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.DesignationTable" Width="1.5" PointX="5.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.ExamMarksTable" Width="1.5" PointX="15" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.ExamSettingTable" Width="1.5" PointX="7.5" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.ExamTable" Width="1.5" PointX="5.25" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.ExpensesTable" Width="1.5" PointX="7.5" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.ExpensesTypeTable" Width="1.5" PointX="5.25" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.ProgrameSessionTable" Width="1.5" PointX="10.5" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.ProgrameTable" Width="1.5" PointX="5.25" PointY="40.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.RoomTable" Width="1.5" PointX="5.25" PointY="44.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.SessionProgrameSubjectSettingTable" Width="1.5" PointX="12.75" PointY="37.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.SessionTable" Width="1.5" PointX="5.25" PointY="47.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.StaffAttendanceTable" Width="1.5" PointX="9.75" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.StaffTable" Width="1.5" PointX="7.5" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.StudentTable" Width="1.5" PointX="10.5" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.SubjectTable" Width="1.5" PointX="5.25" PointY="50.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.SubmissionFeeTable" Width="1.5" PointX="15.75" PointY="32.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.TimeTblTable" Width="1.5" PointX="18" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.UserTable" Width="1.5" PointX="3" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="BAUSTDBModel.UserTypeTable" Width="1.5" PointX="0.75" PointY="26.125" IsExpanded="true" />
+        <AssociationConnector Association="BAUSTDBModel.FK_AnnualTable_ProgrameTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_AnnualTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_SessionProgrameSubjectSettingTable_AnnualTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_AttendanceTable_StudentTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_DesignationTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_StaffTable_DesignationTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExamMarksTable_ExamSettingTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExamMarksTable_ExamTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExamMarksTable_SessionProgrameSubjectSettingTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExamMarksTable_StudentTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExamMarksTable_SubjectTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExamMarksTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExamSettingTable_ExamTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExamSettingTable_ProgrameSessionTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExamSettingTable_SessionTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExamSettingTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExamTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExpensesTable_ExpensesTypeTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExpensesTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ExpensesTypeTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ProgrameSessionTable_ProgrameTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ProgrameSessionTable_SessionTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ProgrameSessionTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_ProgrameTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_SessionProgrameSubjectSettingTable_ProgrameTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_StudentTable_ProgrameTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_SubmissionFeeTable_ProgrameTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_RoomTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_SessionProgrameSubjectSettingTable_SessionTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_SessionProgrameSubjectSettingTable_SubjectTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_SessionProgrameSubjectSettingTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_TimeTblTable_SessionProgrameSubjectSettingTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_SessionTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_StudentTable_SessionTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_StaffAttendanceTable_StaffTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_StaffTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_StudentTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_SubmissionFeeTable_StudentTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_SubjectTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_TimeTblTable_SubjectTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_SubmissionFeeTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_TimeTblTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="BAUSTDBModel.FK_UserTable_UserTypeTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
