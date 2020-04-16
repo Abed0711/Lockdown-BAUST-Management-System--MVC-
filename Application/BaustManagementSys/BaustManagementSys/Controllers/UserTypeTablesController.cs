@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using Database;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using Database;
 
 namespace BaustManagementSys.Controllers
 {
@@ -46,7 +42,7 @@ namespace BaustManagementSys.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserTypeID,TypeName,Description")] UserTypeTable userTypeTable)
+        public ActionResult Create(UserTypeTable userTypeTable)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +74,7 @@ namespace BaustManagementSys.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserTypeID,TypeName,Description")] UserTypeTable userTypeTable)
+        public ActionResult Edit(UserTypeTable userTypeTable)
         {
             if (ModelState.IsValid)
             {
