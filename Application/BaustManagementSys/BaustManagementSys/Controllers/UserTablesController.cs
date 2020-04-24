@@ -17,6 +17,10 @@ namespace BaustManagementSys.Controllers
         // GET: UserTables
         public ActionResult Index()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             var userTables = db.UserTables.Include(u => u.UserTypeTable);
             return View(userTables.ToList());
         }
@@ -24,6 +28,11 @@ namespace BaustManagementSys.Controllers
         // GET: UserTables/Details/5
         public ActionResult Details(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -39,6 +48,10 @@ namespace BaustManagementSys.Controllers
         // GET: UserTables/Create
         public ActionResult Create()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             ViewBag.UserTypeID = new SelectList(db.UserTypeTables, "UserTypeID", "TypeName");
             return View();
         }
@@ -48,8 +61,12 @@ namespace BaustManagementSys.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserID,UserTypeID,FullName,UserName,Password,ContactNo,EmailAddress,Address")] UserTable userTable)
+        public ActionResult Create(UserTable userTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (ModelState.IsValid)
             {
                 db.UserTables.Add(userTable);
@@ -64,6 +81,10 @@ namespace BaustManagementSys.Controllers
         // GET: UserTables/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -84,6 +105,10 @@ namespace BaustManagementSys.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "UserID,UserTypeID,FullName,UserName,Password,ContactNo,EmailAddress,Address")] UserTable userTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(userTable).State = EntityState.Modified;
@@ -97,6 +122,10 @@ namespace BaustManagementSys.Controllers
         // GET: UserTables/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -114,6 +143,10 @@ namespace BaustManagementSys.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             UserTable userTable = db.UserTables.Find(id);
             db.UserTables.Remove(userTable);
             db.SaveChanges();

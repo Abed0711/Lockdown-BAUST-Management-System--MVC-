@@ -1,4 +1,5 @@
 ﻿using Database;
+using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -13,12 +14,20 @@ namespace BaustManagementSys.Controllers
         // GET: UserTypeTables
         public ActionResult Index()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View(db.UserTypeTables.ToList());
         }
 
         // GET: UserTypeTables/Details/5
         public ActionResult Details(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -34,6 +43,14 @@ namespace BaustManagementSys.Controllers
         // GET: UserTypeTables/Create
         public ActionResult Create()
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View();
         }
 
@@ -44,6 +61,10 @@ namespace BaustManagementSys.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(UserTypeTable userTypeTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (ModelState.IsValid)
             {
                 db.UserTypeTables.Add(userTypeTable);
@@ -57,6 +78,10 @@ namespace BaustManagementSys.Controllers
         // GET: UserTypeTables/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -76,6 +101,10 @@ namespace BaustManagementSys.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(UserTypeTable userTypeTable)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(userTypeTable).State = EntityState.Modified;
@@ -88,6 +117,10 @@ namespace BaustManagementSys.Controllers
         // GET: UserTypeTables/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -105,6 +138,10 @@ namespace BaustManagementSys.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (string.IsNullOrEmpty(Convert.ToString(Session["UserName"])))
+            {
+                return RedirectToAction("Login", "Home");
+            }
             UserTypeTable userTypeTable = db.UserTypeTables.Find(id);
             db.UserTypeTables.Remove(userTypeTable);
             db.SaveChanges();

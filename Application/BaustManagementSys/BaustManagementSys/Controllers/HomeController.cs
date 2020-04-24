@@ -86,7 +86,7 @@ namespace BaustManagementSys.Controllers
                     Session["ContactNo"] = string.Empty;
                     Session["EmailAddress"] = string.Empty;
                     Session["Address"] = string.Empty;
-                    ViewBag.message = "try";
+                    ViewBag.message = "Some unexpected Issue is occure please try again";
                 }
             }
             catch(Exception ex)
@@ -99,7 +99,7 @@ namespace BaustManagementSys.Controllers
                 Session["ContactNo"] = string.Empty;
                 Session["EmailAddress"] = string.Empty;
                 Session["Address"] = string.Empty;
-                ViewBag.message = "try again";
+                ViewBag.message = "Some Unexpected issue is occure please try again";
             }
             return View("Login");
            
@@ -107,16 +107,25 @@ namespace BaustManagementSys.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "WellCome To Bangladesh Army University of Science and Technology";
 
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+       
 
-            return View();
+        public ActionResult Logout()
+        {
+            Session["UserID"] = string.Empty;
+            Session["UserTypeID"] = string.Empty;
+            Session["FullName"] = string.Empty;
+            Session["UserName"] = string.Empty;
+            Session["Password"] = string.Empty;
+            Session["ContactNo"] = string.Empty;
+            Session["EmailAddress"] = string.Empty;
+            Session["Address"] = string.Empty;
+            return RedirectToAction("Login");
+
         }
     }
 }
